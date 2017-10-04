@@ -11,25 +11,42 @@ import {
   Text,
   View
 } from 'react-native';
+import { NativeRouter, Route, Link } from 'react-router-native'
 
-export default class router extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+const Home = () => <View style={styles.container}>
+  <Text style={styles.welcome}>
+    Welcome to React Native!
+  </Text>
+  <Text style={styles.instructions}>
+    To get started, edit index.ios.js
+  </Text>
+  <Text style={styles.instructions}>
+    Press Cmd+R to reload,{'\n'}
+    Cmd+D or shake for dev menu
+  </Text>
+  <Link
+    to="/about"
+    underlayColor='#f0f4f7'>
+      <Text>About</Text>
+  </Link>
+</View>
+
+const About = () => <View style={{flex: 1, backgroundColor: 'pink'}}>
+  <View style={{flex: 1, alignSelf: 'center', justifyContent: 'center'}}>
+    <Link
+      to="/"
+      underlayColor='#f0f4f7'>
+      <Text>Yolo</Text>
+    </Link>
+  </View>
+</View>
+
+const App = () => <NativeRouter>
+  <View style={{flex: 1}}>
+    <Route exact path="/" component={Home}/>
+    <Route path="/about" component={About}/>
+  </View>
+</NativeRouter>
 
 const styles = StyleSheet.create({
   container: {
@@ -50,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('router', () => router);
+AppRegistry.registerComponent('router', () => App);
