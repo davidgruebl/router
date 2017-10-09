@@ -11,8 +11,8 @@
 	},
 	"dependencies": {
 		"prop-types": "^15.6.0",
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.48.4",
+		"react": "16.0.0",
+		"react-native": "0.49.3",
 		"react-router-native": "^4.2.0"
 	},
 	"devDependencies": {
@@ -20,6 +20,6 @@
 		"eslint": "^4.8.0",
 		"eslint-config-ada": "^2.0.0",
 		"react-native-debugger-open": "^0.3.13",
-		"react-test-renderer": "16.0.0-alpha.12"
+		"react-test-renderer": "16.0.0"
 	}
 }
