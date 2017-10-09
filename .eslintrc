@@ -1,0 +1,7 @@
+{
+  "extends": "ada/native",
+  "rules": {
+    "react-native/no-color-literals": "off",
+    "react-native/no-inline-styles": "off"
+  }
+}
